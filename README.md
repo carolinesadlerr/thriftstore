@@ -2,6 +2,16 @@
 
 Using SQLite3 and Tkinter we implemented a CRUD application for a thrift store database
 
+## Usage
+```python
+pipenv install
+
+#run script
+python main.py
+
+
+```
+
 ## Running Application for First Time
  
  When you first run the application, you should not have lines 35-38 commented out in the db.py file
