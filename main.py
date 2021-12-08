@@ -3,15 +3,19 @@ from tkinter import messagebox
 from tkinter import ttk
 from db import Database
 
+# Initialize Database
 db = Database('thriftstore.db')
 
 
+# Function to fill item list
 def populate_list():
     item_list.delete(0, END)
     for row in db.fetch():
         item_list.insert(END, row)
 
 
+# Function to add items
+# verifies that all fields are filled before adding
 def add_item():
     if item_text.get() == '' or des_text.get() == '' or price_text.get() == '':
         messagebox.showerror('Required Fields', 'Please include all fields')
@@ -22,7 +26,8 @@ def add_item():
     populate_list()
 
 
-# Bind select to an event
+# Function to create an event that when you select item
+# it takes the index so it can be deleted or updated
 def select_item(event):
     try:
         global selected_item
@@ -39,17 +44,20 @@ def select_item(event):
         pass
 
 
+# Function to remove item selected by user
 def remove_item():
     db.remove(selected_item[0])
     clear_text()
     populate_list()
 
 
+# Function to update an item
 def update_item():
     db.update(selected_item[0], item_text.get(), des_text.get(), price_text.get())
     populate_list()
 
 
+# function to clear the text inside the text fields
 def clear_text():
     item_entry.delete(0, END)
     des_entry.delete(0, END)
@@ -108,7 +116,10 @@ update_btn.grid(row=2, column=2)
 clear_btn = Button(app, text='Clear Input', width=12, command=clear_text)
 clear_btn.grid(row=2, column=3)
 
+# Changes the Title of the application
 app.title('Thrift Store')
+
+# sets size of application box
 app.geometry('700x350')
 
 # populate data
