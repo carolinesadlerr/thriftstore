@@ -32,7 +32,7 @@ class Database:
         self.conn.close()
 
 
-db = Database('thriftstore.db')
-db.insert("Shirt", "size small blue shirt", "5")
-db.insert("Pants", "size 14 straight cut jeans", "10")
-db.insert("T-shirt", "large band t", "7")
+# db = Database('thriftstore.db')
+# db.insert("Shirt", "size small blue shirt", "5")
+# db.insert("Pants", "size 14 straight cut jeans", "10")
+# db.insert("T-shirt", "large band t", "7")
