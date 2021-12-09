@@ -1,4 +1,4 @@
-# thriftstore
+# thrift store
 
 Using SQLite3 and Tkinter we implemented a CRUD application for a thrift store database
 
