@@ -7,7 +7,7 @@ import tkinter as tk
 db = Database('thriftstore.db')
 
 LARGEFONT =("Verdana", 35)
-app = Tk()
+
 class tkinterApp(tk.Tk):
 
     # __init__ function for class tkinterApp
